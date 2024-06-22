@@ -115,8 +115,6 @@ const RegistrationForm = () => {
                   type="text"
                   id="guestName"
                   value={guestName}
-                  onChange={(e) => setName(e.target.value.replace(/[^a-zA-Z]/g, ''))}
-                  required
                   pattern="[a-zA-Z]+"
                   title="Please enter only alphabets (a-z, A-Z)"
                   onChange={(e) => setGuestName(e.target.value)}
@@ -143,3 +141,4 @@ const RegistrationForm = () => {
 };
 
 export default RegistrationForm;
+
