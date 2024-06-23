@@ -121,8 +121,22 @@
   .summary button:hover {
     background-color: #218838;
   }
+
+  .alert-success {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
   
-  /* Responsive Design */
+  .alert-heading {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
@@ -138,4 +152,5 @@
       padding: 20px;
     }
   }
+  
   

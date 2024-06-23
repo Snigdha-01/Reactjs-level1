@@ -47,7 +47,6 @@ const RegistrationForm = () => {
     <div className="container">
       <div className="left-side">
         <img src="https://picsum.photos/1125/365?random=1" alt="Event" />
-
       </div>
       <div className="right-side">
         {!submitted ? (
@@ -55,14 +54,14 @@ const RegistrationForm = () => {
             <h1>Registration Form</h1>
             <label htmlFor="name">Name:</label>
             <input
-  type="text"
-  id="name"
-  value={name}
-  onChange={(e) => setName(e.target.value.replace(/[^a-zA-Z]/g, ''))}
-  required
-  pattern="[a-zA-Z]+"
-  title="Please enter only alphabets (a-z, A-Z)" // Optional tooltip for better UX
-/>
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value.replace(/[^a-zA-Z]/g, ''))}
+              required
+              pattern="[a-zA-Z]+"
+              title="Please enter only alphabets (a-z, A-Z)"
+            />
 
             <label htmlFor="email">Email:</label>
             <input
@@ -126,14 +125,22 @@ const RegistrationForm = () => {
             <button type="submit">Submit</button>
           </form>
         ) : (
-          <div className="summary">
-            <h2>Registration Summary</h2>
-            <p><strong>Name:</strong> {name}</p>
-            <p><strong>Email:</strong> {email}</p>
-            <p><strong>Age:</strong> {age}</p>
-            {attendingWithGuest === 'yes' && <p><strong>Guest Name:</strong> {guestName}</p>}
-            <button onClick={resetForm}>Reset Form</button>
-          </div>
+          <>
+            <div className="alert alert-success" role="alert">
+              <h4 className="alert-heading">Well done!</h4>
+              <p>You have successfully submitted the registration form. Here is your summary:</p>
+              <hr />
+              <p className="mb-0">Check the summary below.</p>
+            </div>
+            <div className="summary">
+              <h2>Registration Summary</h2>
+              <p><strong>Name:</strong> {name}</p>
+              <p><strong>Email:</strong> {email}</p>
+              <p><strong>Age:</strong> {age}</p>
+              {attendingWithGuest === 'yes' && <p><strong>Guest Name:</strong> {guestName}</p>}
+              <button onClick={resetForm}>Reset Form</button>
+            </div>
+          </>
         )}
       </div>
     </div>
